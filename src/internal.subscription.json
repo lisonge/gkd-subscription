@@ -1,7 +1,8 @@
 {
-  "$schema": "https://dev.songe.li/gkd/subscription.schema.json?CDN_302=OFF",
+  "$schema": "https://raw.githubusercontent.com/lisonge/gkd-subscription/main/lib/subscription.schema.json",
   "version": 1,
   "author": "lisonge <i@songe.li> (https://github.com/lisonge)",
+  "description": "APP内部广告集合",
   "app_list": [
     {
       "package_name": "com.zhihu.android",
@@ -168,15 +169,6 @@
     {
       "package_name": "tv.danmaku.bili",
       "rule_group_list": [
-        {
-          "class_name": "tv.danmaku.bili.MainActivityV2",
-          "description": "启动页-开屏广告",
-          "rule_list": [
-            {
-              "selector": "TextView[id=tv.danmaku.bili:id/count_down]"
-            }
-          ]
-        },
         {
           "class_name": "tv.danmaku.bili.ui.video.VideoDetailsActivity",
           "description": "视频播放页-评论区顶部-公告或推荐",

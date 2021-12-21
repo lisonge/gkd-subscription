@@ -1,1 +1,21 @@
-{}
+{
+  "$schema": "https://raw.githubusercontent.com/lisonge/gkd-subscription/main/lib/subscription.schema.json",
+  "version": 1,
+  "description": "APP开屏广告集合",
+  "app_list": [
+    {
+      "package_name": "tv.danmaku.bili",
+      "rule_group_list": [
+        {
+          "class_name": "tv.danmaku.bili.MainActivityV2",
+          "description": "启动页-开屏广告",
+          "rule_list": [
+            {
+              "selector": "TextView[id=tv.danmaku.bili:id/count_down]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
