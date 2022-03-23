@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer",
+      "description": "当前订阅的版本,客户端更新订阅判断依据",
+      "maximum": 9007199254740991,
+      "minimum": 1
+    },
+    "author": {
+      "type": "string",
+      "description": "作者信息"
+    },
+    "description": {
+      "type": "string",
+      "description": "当前订阅描述"
+    },
+    "appList": {
+      "type": "array",
+      "description": "按APP分类的规则组",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "packageName": {
+            "type": "string",
+            "description": "APP的包名,不得与其他列表项重复"
+          },
+          "groupList": {
+            "type": "array",
+            "description": "规则组列表",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "integer",
+                  "maximum": 9007199254740991,
+                  "minimum": -9007199254740991,
+                  "description": "标识当前列表项的唯一性,不得与其他列表项重复,填写后此项规则组可被用户启用或禁用\n填写后不得更改,否则更新订阅后规则组禁用记录将会错乱"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "当前规则组描述"
+                },
+                "className": {
+                  "type": "string",
+                  "description": "匹配界面的类名,注意类名与APP包名完全不同,只是多数情况下以包名开头"
+                },
+                "ruleList": {
+                  "type": "array",
+                  "description": "规则列表",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "selector": {
+                        "type": "string",
+                        "description": "规则的选择器"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "当前规则的描述"
+                      },
+                      "className": {
+                        "type": "string",
+                        "description": "匹配界面的类名,不填则使用父对象的[className],但如果父对象没有此属性,则必填"
+                      }
+                    },
+                    "required": ["selector"]
+                  }
+                }
+              },
+              "required": ["ruleList"]
+            }
+          }
+        },
+        "required": ["packageName", "groupList"]
+      }
+    }
+  },
+  "required": ["version", "appList"]
+}
