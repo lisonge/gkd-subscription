@@ -1,0 +1,21 @@
+{
+  "$schema": "https://dev.songe.li/gkd-subscription/lib/subscription.schema.json",
+  "description": "APP快捷工具",
+  "version": 1,
+  "appList": [
+    {
+      "packageName": "com.tencent.mm",
+      "groupList": [
+        {
+          "description": "微信电脑快捷自动登录",
+          "ruleList": [
+            {
+              "className": "com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI",
+              "selector": "TextView[text='取消登录'] - Button[text='登录']"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
