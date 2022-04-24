@@ -47,6 +47,12 @@
                   "type": "string",
                   "description": "匹配界面的类名,注意类名与APP包名完全不同,只是多数情况下以包名开头"
                 },
+                "cooldown": {
+                  "type": "integer",
+                  "maximum": 9007199254740991,
+                  "minimum": -9007199254740991,
+                  "description": "规则组内部的每个规则,被点击的最小时间间隔,会被规则自身属性覆盖,单位:毫秒"
+                },
                 "ruleList": {
                   "type": "array",
                   "description": "规则列表",
@@ -58,6 +64,12 @@
                         "type": "string",
                         "description": "规则的选择器"
                       },
+                      "key": {
+                        "type": "integer",
+                        "maximum": 9007199254740991,
+                        "minimum": -9007199254740991,
+                        "description": "标识当前列表项的唯一性,不得与其他列表项重复,填写后此项可被用户启用或禁用\n填写后不得更改,否则更新订阅后规则组禁用记录将会错乱"
+                      },
                       "description": {
                         "type": "string",
                         "description": "当前规则的描述"
@@ -65,6 +77,12 @@
                       "className": {
                         "type": "string",
                         "description": "匹配界面的类名,不填则使用父对象的[className],但如果父对象没有此属性,则必填"
+                      },
+                      "cooldown": {
+                        "type": "integer",
+                        "maximum": 9007199254740991,
+                        "minimum": -9007199254740991,
+                        "description": "规则被点击的最小时间间隔,单位:毫秒,为null时将使用规则组的值,之后为负数或null时与0等价"
                       }
                     },
                     "required": ["selector"]

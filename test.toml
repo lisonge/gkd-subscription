@@ -1,0 +1,250 @@
+"$schema" = "https://raw.githubusercontent.com/lisonge/gkd-subscription/main/lib/gkd.schema.json"
+author = "https://github.com/lisonge"
+description = "APP内部广告集合"
+version = 1
+
+[[appList]]
+packageName = "com.zhihu.android"
+
+[[appList.groupList]]
+className = "com.zhihu.android.mix.activity.ContentMixProfileActivity"
+description = "知乎回答页面-文章底部-卡片广告"
+key = 0
+
+[[appList.groupList.ruleList]]
+selector = "View[text$=`广告`] - View[text=`×`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text*=`广告`] - Image"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text*=`广告`] +2 Image"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text.length>0] + TextView[text*=`热度`] + View > Image"
+
+[[appList.groupList.ruleList]]
+selector = "View[text$=`的广告`] + View[text=`×`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text$=`的广告`] + TextView[text=`×`]"
+
+[[appList.groupList.ruleList]]
+selector = "View[text$=`的广告`] +2 View[text=`×`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text=`了解更多`] > TextView[text=`×`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text$=`的广告`] +2 TextView[text=`×`]"
+
+[[appList.groupList.ruleList]]
+description = "盐选会员推荐"
+selector = "TextView[text=`限时解锁`] +2 Image"
+
+[[appList.groupList]]
+className = "com.zhihu.android.mix.activity.ContentMixProfileActivity"
+description = "知乎回答页面-文章底部-文章推荐"
+key = 1
+
+[[appList.groupList.ruleList]]
+selector = "View[text$=`关注`][text*=`回答`] + View[text=`×`]"
+
+[[appList.groupList.ruleList]]
+selector = "View[text*=`的回答`][text*=`点赞`][text$=`评论`] + TextView + Image"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text*=`赞同`][text$=`评论`][text*=`·`] + TextView[text$=`专题精选`] + View[text=`×`]"
+
+[[appList.groupList]]
+className = "com.zhihu.android.ContentActivity"
+description = "题目概览页面-回答列表-广告"
+key = 2
+
+[[appList.groupList.ruleList]]
+description = "确认关闭广告按钮"
+selector = "TextView[id=`com.zhihu.android:id/confirm_uninterest`]"
+
+[[appList.groupList.ruleList]]
+description = "不感兴趣理由按钮"
+selector = "TextView[id=`com.zhihu.android:id/uninterest_reason`]"
+
+[[appList.groupList.ruleList]]
+description = "广告关闭按钮-1"
+selector = "ViewGroup > TextView[text*=`广告`] +4 ImageView"
+
+[[appList.groupList.ruleList]]
+description = "广告关闭按钮-2"
+selector = "ViewGroup > TextView[text*=`广告`] +2 ImageView"
+
+[[appList.groupList]]
+className = "com.zhihu.android.app.ui.activity.MainActivity"
+
+[[appList.groupList.ruleList]]
+description = "确认关闭广告按钮"
+selector = "TextView[id=`com.zhihu.android:id/confirm_uninterest`]"
+
+[[appList.groupList.ruleList]]
+description = "不感兴趣理由按钮"
+selector = "TextView[id=`com.zhihu.android:id/uninterest_reason`]"
+
+[[appList.groupList.ruleList]]
+selector = "ViewGroup > TextView[text*=`的广告`] +2 ImageView"
+
+[[appList]]
+packageName = "com.baidu.tieba"
+
+[[appList.groupList]]
+className = "com.baidu.tieba.tblauncher.MainTabActivity"
+description = "主页推荐-广告"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text*=`广告`] < LinearLayout -2 RelativeLayout > TextView[text=`选择不喜欢理由`] + View"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text$=`广告`] < RelativeLayout <3 LinearLayout - LinearLayout >4 ImageView"
+
+[[appList.groupList]]
+className = "com.baidu.tieba.pb.pb.main.PbActivity"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text*=`广告`] < LinearLayout -2 RelativeLayout > TextView[text*=`选择不喜欢理由`] + View[index=1]"
+
+[[appList.groupList.ruleList]]
+selector = "RelativeLayout[id=`com.baidu.tieba:id/obfuscated`] > LinearLayout > FrameLayout[id=`com.baidu.tieba:id/obfuscated`] > ImageView"
+
+[[appList]]
+packageName = "com.tencent.mm"
+
+[[appList.groupList]]
+className = "com.tencent.mm.plugin.sns.ui.SnsTimeLineUI"
+description = "朋友圈-广告卡片"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text=`选择后将减少该类推荐`] + TextView[text=`确认`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text=`选择后将减少该类推荐`] + FrameLayout > ViewGroup > TextView[text=`直接关闭`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text*=`广告`] + TextView[text*=`广告`] + FrameLayout > LinearLayout[childCount=2] > LinearLayout[childCount=0] + LinearLayout[childCount=0]"
+
+[[appList.groupList.ruleList]]
+selector = "ImageView[contentDescription$=`的头像`] + LinearLayout > LinearLayout[childCount=2] > TextView[id!=null][text.length>0] + LinearLayout[id!=null][childCount=0]"
+
+[[appList.groupList]]
+className = "com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI"
+description = "其他设备登录界面-自动点击登录"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[text=`取消登录`] - Button[text=`登录`]"
+
+[[appList.groupList]]
+className = "com.tencent.mm.ui.LauncherUI"
+description = "微信聊天界面-红包"
+
+[[appList.groupList.ruleList]]
+className = "com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI"
+selector = "TextView[text$=`的红包`] <2 LinearLayout < LinearLayout +2 ImageButton[contentDescription=`开`] + Button"
+
+[[appList.groupList.ruleList]]
+description = "红包描述下面有一行小字-**的红包"
+selector = "TextView[text$=`的红包`] >2 LinearLayout - ImageView < LinearLayout +2 RelativeLayout > TextView[text=`微信红包`]"
+
+[[appList.groupList.ruleList]]
+description = "红包下面没有小字, 但是得和自己的红包区分开来"
+selector = "RelativeLayout + LinearLayout >5 LinearLayout[childCount=1] - ImageView < LinearLayout +2 RelativeLayout > TextView[text=`微信红包`]"
+
+[[appList.groupList]]
+className = "com.tencent.mm.ui.LauncherUI"
+description = "微信聊天界面-转账"
+
+[[appList.groupList.ruleList]]
+className = "com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyDetailUI"
+description = "红包领取结果页面-返回按钮"
+selector = "ImageView[contentDescription=`返回按钮`]"
+
+[[appList.groupList.ruleList]]
+className = "com.tencent.mm.plugin.remittance.ui.RemittanceDetailUI"
+selector = "TextView - Button[text=`收款`]"
+
+[[appList.groupList.ruleList]]
+description = "注意:如果红包备注是[已被接收,已收款,已收款待入账],则无法区分"
+selector = "RelativeLayout + LinearLayout >4 TextView[text!=`已被接收`][text!=`已收款`][text!=`已收款待入账`] <2 LinearLayout < RelativeLayout <2 LinearLayout + RelativeLayout > TextView[text=`微信转账`]"
+
+[[appList]]
+packageName = "tv.danmaku.bili"
+
+[[appList.groupList]]
+className = "tv.danmaku.bili.ui.video.VideoDetailsActivity"
+description = "视频播放页-评论区顶部-公告或推荐"
+
+[[appList.groupList.ruleList]]
+selector = "ImageView[id=`tv.danmaku.bili:id/close`]"
+
+[[appList.groupList]]
+className = "tv.danmaku.bili.MainActivityV2"
+description = "动态-综合-广告卡片"
+
+[[appList.groupList.ruleList]]
+className = "com.bilibili.lib.ui.menu.a"
+description = "点击广告关闭后的弹窗的列表项的第一个"
+selector = "TextView[id^=`tv.danmaku.bili:id/reason`]"
+
+[[appList.groupList.ruleList]]
+description = "广告卡片-右上角文本-广告^"
+selector = "TextView[id=`tv.danmaku.bili:id/ad_tag_text`]"
+
+[[appList]]
+packageName = "com.duokan.phone.remotecontroller"
+
+[[appList.groupList]]
+className = "com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2"
+description = "首页-底部推荐卡片"
+
+[[appList.groupList.ruleList]]
+selector = "ImageView[id=`com.duokan.phone.remotecontroller:id/image_close_banner`]"
+
+[[appList]]
+packageName = "com.coolapk.market"
+
+[[appList.groupList]]
+className = "com.coolapk.market.view.main.MainActivity"
+
+[[appList.groupList.ruleList]]
+className = "com.bytedance.sdk.openadsdk.core.dislike.ui.c"
+description = "关闭广告后的弹窗, [举报广告] 上面有多个按钮, 且按钮文字顺序随机, 所以我们只需要点击最近一个按钮即可"
+selector = "TextView[text=`举报广告`] < LinearLayout - LinearLayout"
+
+[[appList.groupList.ruleList]]
+selector = "Button[text=`看视频，免广告`] - Button[text=`不感兴趣`]"
+
+[[appList.groupList.ruleList]]
+description = ""
+selector = "TextView[id=`com.coolapk.market:id/ad_text_view`] + ImageView[id=`com.coolapk.market:id/close_view`]"
+
+[[appList]]
+packageName = "com.sina.weibo"
+
+[[appList.groupList]]
+className = "com.sina.weibo.feed.DetailWeiboActivity"
+
+[[appList.groupList.ruleList]]
+selector = "RelativeLayout > TextView[id=`com.sina.weibo:id/tvTrendsTitle`] + ImageView[id=`com.sina.weibo:id/iv_ad_x`]"
+
+[[appList.groupList.ruleList]]
+className = "com.sina.weibo.utils.WeiboDialog$CustomDialog"
+selector = "TextView[text=`为何会看到此广告`] -n TextView[text=`不感兴趣`]"
+
+[[appList.groupList.ruleList]]
+selector = "TextView[id=`com.sina.weibo:id/tv_tips`][text=`广告`] + ImageView[id=`com.sina.weibo:id/iv_close_icon`]"
+
+[[appList.groupList]]
+className = "com.sina.weibo.MainTabActivity"
+
+[[appList.groupList.ruleList]]
+selector = "LinearLayout[id=`com.sina.weibo:id/comment_guide_view`] -3 ViewGroup[id=`com.sina.weibo:id/mblogHeadtitle`][index=0](95%, 43%)"
+
+[[appList.groupList.ruleList]]
+description = "立即领取红包右上角x"
+selector = "RelativeLayout[id=`com.sina.weibo:id/complete_layout`] + ImageView[id=`com.sina.weibo:id/close`]"
